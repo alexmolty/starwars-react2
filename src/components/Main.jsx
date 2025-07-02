@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <main className="clearfix">
             <Hero/>
-<DreamTeam/>
+            <DreamTeam/>
             <p className="farGalaxy">{openingCrawl}</p>
         </main>
     );
