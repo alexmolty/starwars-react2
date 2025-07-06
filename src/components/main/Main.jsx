@@ -1,7 +1,7 @@
-import {navItems} from "../utils/constants.js";
-import StarWars from "./StarWars.jsx";
-import Contact from "./Contact.jsx";
-import AboutMe from "./AboutMe.jsx";
+import {navItems} from "../../utils/constants.js";
+import StarWars from "../header/StarWars.jsx";
+import Contact from "../header/Contact.jsx";
+import AboutMe from "../header/AboutMe.jsx";
 import Home from "./Home.jsx";
 
 const Main = ({page}) => {

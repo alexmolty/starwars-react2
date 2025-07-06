@@ -1,4 +1,3 @@
-import {openingCrawl} from "../utils/constants.js";
 import DreamTeam from "./DreamTeam.jsx";
 import Hero from "./Hero.jsx";
 import OpeningCrawl from "./OpeningCrawl.jsx";
@@ -8,7 +7,7 @@ const Home = () => {
         <main className="clearfix">
             <Hero/>
             <DreamTeam/>
-<OpeningCrawl/>
+            <OpeningCrawl/>
         </main>
     );
 };
