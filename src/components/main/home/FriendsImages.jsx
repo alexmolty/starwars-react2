@@ -1,4 +1,4 @@
-import {dreamTeam} from "../../utils/constants.js";
+import {dreamTeam} from "../../../utils/constants.js";
 
 const FriendsImages = () => {
     return (

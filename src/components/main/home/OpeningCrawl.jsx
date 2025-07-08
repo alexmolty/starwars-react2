@@ -1,4 +1,4 @@
-import {BASEURL} from "../../utils/constants.js";
+import {BASEURL} from "../../../utils/constants.js";
 import {useEffect, useState} from "react";
 
 const OpeningCrawl = () => {

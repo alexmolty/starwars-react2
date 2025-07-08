@@ -1,7 +1,7 @@
 import Planets from "./Planets.jsx";
 
 const ContactForm = () => {
-    return (<div className="farGalaxy text-center">
+    return (<div className="farGalaxy text-center p-5">
         <form>
             <div className="form-group mb-3">
                 <label className="form-label">Your name</label>
@@ -14,7 +14,12 @@ const ContactForm = () => {
             </div>
             <Planets/>
             <div>
-                <button className="btn-danger" onClick={e => e.preventDefault()}>Sent</button>
+                <button className="btn-danger"
+                        onClick={e => {
+                            e.preventDefault();
+                            alert("We apologize. The site is under construction, the form is unavailable.")
+                        }}>Send
+                </button>
             </div>
         </form>
 

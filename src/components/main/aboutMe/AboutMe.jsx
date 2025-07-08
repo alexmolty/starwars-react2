@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
-import {BASEURL} from "../../utils/constants.js";
-import PersonCard from "../main/PersonCard.jsx";
+import {BASEURL} from "../../../utils/constants.js";
+import PersonCard from "./PersonCard.jsx";
 
 const AboutMe = () => {
     const [LukeSkywalker, setLukeSkywalker] = useState(null)

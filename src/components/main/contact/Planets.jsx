@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {BASEURL} from "../../utils/constants.js";
+import {BASEURL} from "../../../utils/constants.js";
 import Planet from "./Planet.jsx";
 
 const Planets = () => {

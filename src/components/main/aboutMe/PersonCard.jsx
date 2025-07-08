@@ -1,6 +1,6 @@
-import {personFields} from "../../utils/constants.js";
+import {personFields} from "../../../utils/constants.js";
 import PersonCardLine from "./PersonCardLine.jsx";
-import Hero from "./Hero.jsx";
+import Hero from "../home/Hero.jsx";
 
 function PersonCard({person}) {
     return (
