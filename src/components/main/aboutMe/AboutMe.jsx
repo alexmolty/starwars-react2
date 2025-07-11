@@ -1,25 +1,33 @@
 import {useEffect, useState} from "react";
-import {BASEURL} from "../../../utils/constants.js";
+import {BASEURL, monthMilliseconds} from "../../../utils/constants.js";
 import PersonCard from "./PersonCard.jsx";
 
 const AboutMe = () => {
-    const [LukeSkywalker, setLukeSkywalker] = useState(null)
+    const [lukeSkywalker, setLukeSkywalker] = useState(null)
     useEffect(() => {
-        fetch(`${BASEURL}/v1/peoples/1`)
-            .then(res => res.json())
-            .then(data => setLukeSkywalker(data))
+        const lukeStorage = localStorage.getItem("luke");
+        const millisecondsCreation = localStorage.getItem("millisecondsCreation");
+        if (lukeStorage && millisecondsCreation && Number(millisecondsCreation) + monthMilliseconds >= new Date().getTime()) {
+            setLukeSkywalker(lukeStorage)
+        } else {
+            fetch(`${BASEURL}/v1/peoples/1`)
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem('luke', JSON.stringify(data));
+                    const millisecondsCreation = new Date().getTime();
+                    localStorage.setItem('millisecondsCreation', millisecondsCreation.toString());
+                    setLukeSkywalker(data)
+                })
+        }
     }, [])
-    if (LukeSkywalker) {
-        return (
-            <div className="farGalaxy">
-                <PersonCard person={LukeSkywalker}/>
-            </div>
-        );
+    if (lukeSkywalker) {
+        return (<div className="farGalaxy">
+                <PersonCard person={lukeSkywalker}/>
+            </div>);
     } else {
-        return (
-            <div className="farGalaxy d-flex justify-content-center align-items-center">
-                <p className="spinner-border"></p>
-            </div>)
+        return (<div className="farGalaxy d-flex justify-content-center align-items-center">
+            <p className="spinner-border"></p>
+        </div>)
     }
 
 };

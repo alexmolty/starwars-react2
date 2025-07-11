@@ -26,3 +26,5 @@ export const personFields = [{key: `name`, label: `Name`}, {key: `gender`, label
     key: `eye_color`,
     label: `Eye color`
 }, {key: `mass`, label: `Mass`}, {key: `birth_year`, label: `Birth year`}];
+
+export const monthMilliseconds = (1 * 1000 * 60 * 60 * 24 * 30);
