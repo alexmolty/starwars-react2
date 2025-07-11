@@ -6,7 +6,7 @@ const AboutMe = () => {
     const [lukeSkywalker, setLukeSkywalker] = useState(null)
     useEffect(() => {
         const lukeStorage = localStorage.getItem("luke");
-        const millisecondsCreation = localStorage.getItem("millisecondsCreation");
+        const millisecondsCreation = localStorage.getItem("lukeMillisecondsCreation");
         if (lukeStorage && millisecondsCreation && Number(millisecondsCreation) + monthMilliseconds >= new Date().getTime()) {
             setLukeSkywalker(lukeStorage)
         } else {
@@ -15,7 +15,7 @@ const AboutMe = () => {
                 .then(data => {
                     localStorage.setItem('luke', JSON.stringify(data));
                     const millisecondsCreation = new Date().getTime();
-                    localStorage.setItem('millisecondsCreation', millisecondsCreation.toString());
+                    localStorage.setItem('lukeMillisecondsCreation', millisecondsCreation.toString());
                     setLukeSkywalker(data)
                 })
         }
